@@ -1,0 +1,23 @@
+{
+  "name": "sketch-to-grid-config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "test": "mocha --require @babel/register"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/register": "^7.9.0",
+    "adm-zip": "^0.4.14",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "chai": "^4.2.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.3"
+  }
+}

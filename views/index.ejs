@@ -1,0 +1,10 @@
+<form action="/generate">
+<label>
+Select a .sketch file
+<input type="file" name="file" />
+</label>
+</form>
+
+<% if (typeof generated_configuration !== 'undefined) { %>
+<p><%= generated_configuration %></p>
+<% } %>
