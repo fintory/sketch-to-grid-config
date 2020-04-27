@@ -1,15 +1,17 @@
-import admZip from 'adm-zip'
+import AdmZip from 'adm-zip'
 
 export default function extractGridConfiguration({ file }) {
   /**
    * Create a new zip file instance
    */
-  const zip = new admZip(file)
+  const zip = new AdmZip(file)
 
   /**
    * Get all page entries and it's raw data
    */
-  const pageEntries = zip.getEntries().filter(e => e.entryName.indexOf('pages') === 0)
+  const pageEntries = zip
+    .getEntries()
+    .filter(e => e.entryName.indexOf('pages') === 0)
   const pageEntriesData = pageEntries.map(e => e.getData().toString())
 
   /**
@@ -21,7 +23,9 @@ export default function extractGridConfiguration({ file }) {
   /**
    * Filter for only artboard, because layer don't include an (necessary) layout
    */
-  const onlyArtboardPages = pagesLayers.filter(page => page._class === 'artboard')
+  const onlyArtboardPages = pagesLayers.filter(
+    page => page._class === 'artboard'
+  )
   const layouts = onlyArtboardPages.map(artboard => artboard.layout)
 
   /**
